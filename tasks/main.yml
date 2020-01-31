@@ -1,0 +1,32 @@
+---
+- name: Install system python (Centos)
+  yum:
+    name:
+      - python27
+      - python36
+      - python36-pip
+    state: latest
+    when: "ansible_os_family == 'RedHat'"
+
+- name: Install system python (Debian)
+  apt:
+    name:
+      - python-pip
+      - python3-pip
+    state: latest
+  when: "ansible_os_family == 'Debian'"
+
+- name: Install python (MacOS)
+  homebrew:
+    name:
+        - python@3
+        - python@2
+  when: "ansible_os_family == 'Darwin'"
+
+- name: Install python (Windows)
+  win_chocolatey:
+    name:
+      - python2
+      - python
+    state: present
+  when: "ansible_os_family == 'Windows'"
