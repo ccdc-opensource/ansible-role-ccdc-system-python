@@ -32,6 +32,12 @@
     state: present
   when: "ansible_os_family == 'Windows'"
 
+- debug:
+  msg: "Default python interpreter is {{ discovered_interpreter_python }}"
+
 - name: Update facts to get new default Python interpreter
   setup:
     filter: "discovered_interpreter_python"
+
+- debug:
+    msg: "Default python interpreter is {{ discovered_interpreter_python }}"
