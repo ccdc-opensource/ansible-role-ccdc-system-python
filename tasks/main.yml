@@ -31,3 +31,7 @@
       - python
     state: present
   when: "ansible_os_family == 'Windows'"
+
+- name: Update facts to get new default Python interpreter
+  setup:
+    filter: "discovered_interpreter_python"
