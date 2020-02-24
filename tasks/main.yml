@@ -6,7 +6,8 @@
       - python36
       - python36-pip
     state: latest
-    when: "ansible_os_family == 'RedHat'"
+    use_backend: yum
+  when: "ansible_os_family == 'RedHat'"
 
 - name: Install system python (Debian)
   apt:
