@@ -32,9 +32,10 @@
     state: present
   when: "ansible_os_family == 'Windows'"
 
-- name: Check default Python interpreter
-  debug:
-    msg: "Default python interpreter is {{ ansible_facts['discovered_interpreter_python'] }}"
+- name: Update environment from Chocolatey (Windows)
+  win_command:
+    cmd: refreshenv
+  when: "ansible_os_family == 'Windows'"
 
 - name: Update facts to get new default Python interpreter
   setup:
@@ -43,7 +44,3 @@
 - name: Chocolatey Python package
   debug:
     var: ansible_chocolatey.packages
-
-- name: Check default Python interpreter
-  debug:
-    msg: "Default python interpreter is {{ ansible_facts['discovered_interpreter_python'] }}"
