@@ -34,7 +34,7 @@
 
 - name: Check default Python interpreter
   debug:
-    msg: "Default python interpreter is {{ discovered_interpreter_python }}"
+    msg: "Default python interpreter is {{ ansible_facts['discovered_interpreter_python'] }}"
 
 - name: Update facts to get new default Python interpreter
   setup:
@@ -46,5 +46,4 @@
 
 - name: Check default Python interpreter
   debug:
-    msg: "Default python interpreter is {{ discovered_interpreter_python }}"
-  
+    msg: "Default python interpreter is {{ ansible_facts['discovered_interpreter_python'] }}"
