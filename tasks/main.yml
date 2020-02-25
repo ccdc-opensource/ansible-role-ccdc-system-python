@@ -38,9 +38,9 @@
 
 - name: Display default Python interpreter
   debug:
-    var: "ansible_facts['ansible_python']"
+    var: ansible_facts
   when: "ansible_os_family == 'Windows'"
 
 - name: Set default Windows Python interpreter
   set_fact:
-    ansible_python_interpreter: c:\Python37\python.exe
+    ansible_python_interpreter: c:\\Python37\\python.exe
