@@ -3,6 +3,7 @@
   yum:
     name:
       - python27
+      - python27-pip
       - python36
       - python36-pip
     state: latest
