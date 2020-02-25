@@ -34,3 +34,10 @@
       - python
     state: present
   when: "ansible_os_family == 'Windows'"
+
+- name: Update Ansible facts to include new Python interpreter
+  setup:
+
+- name: Display new Python interpreter
+  debug:
+    var: ansible_facts
