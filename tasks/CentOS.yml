@@ -1,11 +1,11 @@
 ---
-    - name: Install Python 2.7+3.6 and PIP packages
-        yum:
-            name:
-                - python27
-                - python27-pip
-                - python36
-                - python36-pip
-            state: latest
-            use_backend: yum
-        become: yes
+  - name: Install Python 2.7+3.6 and PIP packages
+    yum:
+      name:
+        - python27
+        - python27-pip
+        - python36
+        - python36-pip
+      state: latest
+      use_backend: yum
+    become: yes

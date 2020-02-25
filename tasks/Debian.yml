@@ -1,8 +1,8 @@
 ---
-    - name: Install Python 3 and pip
-        apt:
-            name:
-                - python-pip
-                - python3-pip
-            state: latest
-        become: yes
+  - name: Install Python 3 and pip
+    apt:
+      name:
+        - python-pip
+        - python3-pip
+      state: latest
+    become: yes
