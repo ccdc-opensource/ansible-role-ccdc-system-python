@@ -1,37 +1,8 @@
 ---
-- name: Install system python (Centos)
-  yum:
-    name:
-      - python27
-      - python27-pip
-      - python36
-      - python36-pip
-    state: latest
-    use_backend: yum
-  when: "ansible_os_family == 'RedHat'"
-  become: yes
-
-- name: Install system python (Debian)
-  apt:
-    name:
-      - python-pip
-      - python3-pip
-    state: latest
-  when: "ansible_os_family == 'Debian'"
-  become: yes
-
-- name: Install python (MacOS)
-  homebrew:
-    name:
-        - python@3
-        # homebrew no longer supplies Python 2.
-        # - python@2
-  when: "ansible_os_family == 'Darwin'"
-
-- name: Install python (Windows)
-  win_chocolatey:
-    name:
-      - python2
-      - python
-    state: present
-  when: "ansible_os_family == 'Windows'"
+    - name: Install system Python
+        include_tasks: "{{ item }}"
+        with_first_found:
+            - "{{ ansible_os_family }}-{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+            - "{{ ansible_os_family }}-{{ ansible_distribution }}.yml"
+            - "{{ ansible_os_family }}.yml"
+            - "{{ ansible_system }}.yml"

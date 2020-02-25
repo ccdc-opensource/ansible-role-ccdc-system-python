@@ -1,0 +1,7 @@
+---
+    - name: Install python (MacOS)
+        homebrew:
+            name:
+                - python@3
+                # homebrew no longer supplies Python 2.
+                # - python@2
