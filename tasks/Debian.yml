@@ -2,7 +2,10 @@
   - name: Install Python 3 and pip
     apt:
       name:
-        - python-pip
+        # Skipping Python 2.7 for now as this will be mostly used for conan,
+        # which can run on 3.6 just fine.
+        # - python-pip
+        - python3
         - python3-pip
       state: latest
     become: yes

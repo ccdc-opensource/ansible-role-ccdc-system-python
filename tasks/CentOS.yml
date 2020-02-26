@@ -1,9 +1,11 @@
 ---
-  - name: Install Python 2.7+3.6 and PIP packages
+  - name: Install Python 3.6 and pip package
     yum:
       name:
-        - python27
-        - python-setuptools
+        # Skipping Python 2.7 for now as this will be mostly used for conan,
+        # which can run on 3.6 just fine.
+        # - python27
+        # - python-setuptools
         - python36
         - python36-pip
       state: latest
