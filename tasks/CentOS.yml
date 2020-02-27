@@ -2,10 +2,12 @@
   - name: Install Python 3.6 and pip package
     yum:
       name:
-        # Skipping Python 2.7 for now as this will be mostly used for conan,
-        # which can run on 3.6 just fine.
+        # Skipping Python 2.7 for now as the system python will be
+        # used only for conan, which can run on 3.6 just fine.
         # - python27
-        # - python-setuptools
+        # We do need python-setuptools (for the installed 2.7) on CentOS, as
+        # otherwise ansible's pip module will fail to work
+        - python-setuptools
         - python36
         - python36-pip
       state: latest
