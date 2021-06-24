@@ -18,7 +18,7 @@ None.
 
     - hosts: all
       roles:
-        - ccdc-system-python
+        - ccdc.system_python
 
 ## License
 
