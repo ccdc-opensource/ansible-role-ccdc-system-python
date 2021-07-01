@@ -1,9 +1,6 @@
 ---
-  - name: Install Python 3.x
-    win_chocolatey:
-      name:
-        # Skipping Python 2.7 for now as this will be mostly used for conan,
-        # which can run on 3.6 just fine.
-        # - python2
-        - python
-      state: present
+- name: Install Python 3.x
+  win_chocolatey:
+    name:
+      - python
+    state: present

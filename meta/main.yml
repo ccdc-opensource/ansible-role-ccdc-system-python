@@ -4,6 +4,7 @@ dependencies: []
 galaxy_info:
   role_name: system_python
   author: rockdreamer
+  namespace: ccdc
   description: Install an up-to-date Python.
   company: The Cambridge Crystallographic Data Centre
   license: "license (BSD, MIT)"
@@ -21,7 +22,7 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
-    - name: Darwin
+    - name: MacOSX
       versions:
         - all
     - name: Windows
