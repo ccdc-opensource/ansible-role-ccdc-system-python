@@ -1,10 +1,5 @@
 ---
-  - name: Install Python 3
-    homebrew:
-      name:
-        - python@3
-        # Skipping Python 2.7 for now as this will be mostly used for conan,
-        # which can run on 3.6 just fine.
-        # Also, homebrew no longer supplies Python 2 so getting this would
-        # require a different process.
-        # - python@2
+- name: Install Python 3
+  homebrew:
+    name:
+      - python@3

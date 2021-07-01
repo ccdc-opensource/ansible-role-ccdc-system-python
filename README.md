@@ -1,6 +1,6 @@
 # Ansible Role: System Python setup
 
-Install Python 2.7 and 3.x on the target system.
+Install Python on the target system using a package manager.
 
 ## Requirements
 
@@ -18,7 +18,7 @@ None.
 
     - hosts: all
       roles:
-        - ccdc-system-python
+        - ccdc.system_python
 
 ## License
 
