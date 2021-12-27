@@ -2,5 +2,5 @@
 - name: Install Python 3.x
   win_chocolatey:
     name:
-      - python
+      - python3
     state: present
