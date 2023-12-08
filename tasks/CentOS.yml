@@ -1,5 +1,5 @@
 ---
-- name: Install Python 3.6 and pip package
+- name: Install Python 3 and pip package
   yum:
     name:
       # We do need python-setuptools (for the installed 2.7) on CentOS, as
