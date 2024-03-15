@@ -1,5 +1,0 @@
----
-- name: Install Python 3
-  homebrew:
-    name:
-      - python@3
