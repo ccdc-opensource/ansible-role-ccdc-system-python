@@ -5,4 +5,5 @@
   vars:
     homebrew_installed_packages:
       - python@3
+  when: not cpp_buildmachine
 # This is overwritten by our group_vars (cpp.build-machines)
