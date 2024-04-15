@@ -1,5 +1,5 @@
 ---
-- name: Insall Homebrew + Python 3
+- name: Install Homebrew + Python 3
   ansible.builtin.include_role:
     name: geerlingguy.mac.homebrew
   vars:
