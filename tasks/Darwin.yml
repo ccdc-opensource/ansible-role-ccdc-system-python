@@ -1,5 +1,9 @@
 ---
-- name: Install Python 3
-  homebrew:
-    name:
+- name: Install Homebrew + Python 3
+  ansible.builtin.include_role:
+    name: geerlingguy.mac.homebrew
+  vars:
+    homebrew_installed_packages:
       - python@3
+  when: not cpp_buildmachine
+# This is overwritten by our group_vars (cpp.build-machines)
