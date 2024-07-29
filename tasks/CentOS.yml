@@ -1,12 +1,12 @@
 ---
-- name: Install Python 3.6 and pip package
+- name: Install Python 3 and pip package
   yum:
     name:
       # We do need python-setuptools (for the installed 2.7) on CentOS, as
       # otherwise ansible's pip module will fail to work
       - python-setuptools
-      - python36
-      - python36-pip
+      - python3
+      - python3-pip
     state: present
     use_backend: yum
   become: true
